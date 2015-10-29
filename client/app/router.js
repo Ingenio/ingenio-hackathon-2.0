@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('ask-keen');
   this.route('dashboard');
   this.route('chat');
+  this.route('category-list');
 });
 
 export default Router;
