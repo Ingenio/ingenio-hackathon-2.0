@@ -1,2 +1,17 @@
 <img src="/images/keen-category-page.png"/>
-{{outlet}}
+<div id="popupContainer">&nbsp;</div>
+{{#if model.showNameYourPriceDialog}}
+  {{#modal-dialog
+    target="#popupContainer"
+    containerClassNames="alert-box success"
+    clickOutsideToClose="true"
+  }}
+      <!--
+    attachment="top left"
+      targetAttachment="top left"-->
+      Would you like to name your own price?
+  <br>
+      {{#link-to 'name-your-price' tagName='button' classNames='btn btn-primary  save-name'}}Yes{{/link-to}}
+
+  {{/modal-dialog}}
+{{/if}}

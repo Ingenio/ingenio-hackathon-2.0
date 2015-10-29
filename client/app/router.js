@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('dashboard');
   this.route('chat');
   this.route('category-list');
+  this.route('name-your-price');
 });
 
 export default Router;
