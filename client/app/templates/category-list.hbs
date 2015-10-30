@@ -1,4 +1,24 @@
-<img src="/images/keen-category-page.png"/>
+<!--<img src="/images/keen-category-page.png"/>-->
+<h1>Psychic Readings</h1>
+<div style="width:694px;height:238px;background:url('https://ingenio-a.akamaihd.net/D1_cat195-herobg-sum2015_V1.jpg') no-repeat;text-align:left;font-family:arial;">
+    <!-- text -->
+    <div style="margin-left:37px;margin-top:70px;height:32px;position:absolute;"><img src="https://ingenio-a.akamaihd.net/D1_cat-hero-text-195-n_v1.png" width="307" height="31" alt="Seeking illumination?" title="" border="0"></div>
+    <div style="margin-left:37px;margin-top:110px;position:absolute;color:#069;font-size:18px;font-weight:bold;">Psychic Readings light the way.</div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col-xs-6 col-md-10">
+        <ul class="media-list advisor-message-list">
+          {{#each advisor in advisorList}}
+            {{advisor-info advisorInfo=advisor}}
+              <br/>
+          {{/each}}
+        </ul>
+    </div>
+</div>
+
+
 <div id="popupContainer">&nbsp;</div>
 {{#if model.showNameYourPriceDialog}}
   {{#modal-dialog
