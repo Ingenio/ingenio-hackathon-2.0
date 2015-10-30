@@ -186,3 +186,17 @@ html, body {
   background-color:  $green;
   border-color: $green;
 }
+
+
+.price-section{
+  margin-top: 15px;
+}
+
+.price{
+  margin-top: 0px;
+  font-size: 26px;
+}
+.striked-price{
+  margin-top: 0px;
+  text-decoration: line-through;
+}

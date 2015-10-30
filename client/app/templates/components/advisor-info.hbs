@@ -1,0 +1,34 @@
+<li class="advisor-info media">
+    <span class="pull-left text-center">
+        <img {{bind-attr src=advisorInfo.profileImageUrl}} class="img-circle media-object advisor-image" alt="avatar">
+        <img {{bind-attr src=starRatingImageUrl}} alt="stars" border="0">
+    </span>
+
+    <div class="media-body">
+        <div class="row">
+          <div class="col-xs-6 col-md-8">
+            <h4 class="media-heading">
+                <span class="advisor-name">{{advisorInfo.advisorName}}</span>
+                <small><i>Posted on {{advisorInfo.postedDate}} (8 seconds ago)</i></small>
+            </h4>
+            <span class="user-message inline-block">
+              {{advisorInfo.description}}
+            </span>
+          </div>
+          <div class="col-xs-6 col-md-2 price-section">
+              <span class="inline-block"><span class="price">{{advisorInfo.minutesOffered}}</span>Mins</span>
+              <span class="inline-block">
+                  <span class="price">${{offerPrice}}</span>
+                  <span class="striked-price">${{advisorInfo.actualTotalPrice}}</span>
+              </span>
+          </div>
+          <div class="col-xs-6 col-md-2 ">
+              <a href="http://keen.com"><img src="/images/button-call-now.png"/></a>
+              <br/><br/>
+              <a href="http://keen.com"><img src="/images/button-chat-now.png"/></a>
+          </div>
+        </div>
+
+    </div>
+
+</li>

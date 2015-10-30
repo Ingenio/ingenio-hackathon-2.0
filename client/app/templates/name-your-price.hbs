@@ -1,1 +1,39 @@
-{{outlet}}
+<div class="col-sm-12 ask-keen-content">
+  {{#if isOfferSubmitted}}
+      <div class="panel panel-default consumer-question">
+          <div class="panel-body">
+              <h2>Your offer : $30</h2>
+          </div>
+      </div>
+
+    <h4 class="secondary"> Negotiating with our advisors. Spinner goes here....</h4><br/>
+  {{else}}
+      <h2>Name your price to <span class="hundreds-advisors">hundreds</span> of Advisors!</h2>
+
+      <div class="input-group input-group-lg">
+        {{input-with-on-change class="form-control" type="text" maxlength="140" value=questionAsked
+        placeholder="Type in your question..." onInputChange="onInputChange" startedTyping="startedTyping"}}
+          <span class="input-group-btn">
+              <button {{bind-attr class=":btn :btn-success consumerStartedTyping:enabled:disabled"}}
+                      type="submit" {{action 'submitQuestion'}}>Ask
+              </button>
+            </span>
+      </div>
+
+  {{/if}}
+
+
+  {{#if anyAdvisorResponsePresent}}
+      <h3 class="secondary">Responses from our advisors:</h3>
+      <br/>
+      <ul class="media-list advisor-message-list">
+        {{#each response in responseFromAdvisors}}
+          {{advisor-info advisorInfo=response userId=userId offerPrice=userOfferPrice}}
+            <br/>
+        {{/each}}
+      </ul>
+  {{/if}}
+</div>
+
+
+<!-- TODO: HTML content for emailid-->
