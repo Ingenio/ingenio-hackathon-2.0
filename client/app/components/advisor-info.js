@@ -6,6 +6,6 @@ export default Ember.Component.extend({
   }.property(),
 
   starRatingImageUrl: function() {
-    return ('http://i.keen.com/D1_k3ratingstars-' + this.get('advisorInfo').starRating + '_V1.png');
+    return ('http://i.keen.com/D1_k3ratingstars-' + this.get('advisorInfo.starRating') + '_V1.png');
   }.property()
 });

@@ -24,8 +24,7 @@ module.exports = function Router(socketIo) {
     router.route('/advisors')
       .get(function(req, res) {
           createRandomAdvisors(10).then(function(advisors){
-              console.log(advisors);
-              res.send(advisors);
+            res.send({'advisors': advisors});
           })
       });
 
@@ -161,13 +160,13 @@ function createRandomAdvisors(count) {
         _.map(users, function(record){
             var user = record.user;
             advisors.push({
-                advisorId: Math.floor((Math.random() * 100000000000) + 1),
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget commodo hippo. Phasellus tristique semper leo, et ultrices lorem ornare non. Etiam ornare sollicitudin vehicula. Fusce at ante elementum lorem auctor volutpa',
-                profileImageUrl: user.picture.large,
-                advisorName: (user.name.first + ' ' + user.name.last),
-                postedDate: moment().format('MMMM Do, h:mm:ss a'), //March 8th 2015
-                starRating: Math.floor((Math.random() * 5) + 1),
-                pricePerMinute: (Math.floor((Math.random() * 5) + 1) + 0.99).toFixed(2)
+              id: Math.floor((Math.random() * 100000000000) + 1).toString(),
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget commodo hippo. Phasellus tristique semper leo, et ultrices lorem ornare non. Etiam ornare sollicitudin vehicula. Fusce at ante elementum lorem auctor volutpa',
+              profileImageUrl: user.picture.large,
+              advisorName: (user.name.first + ' ' + user.name.last),
+              postedDate: moment().format('MMMM Do, h:mm:ss a'), //March 8th 2015
+              starRating: Math.floor((Math.random() * 5) + 1),
+              pricePerMinute: (Math.floor((Math.random() * 5) + 1) + 0.99).toFixed(2)
             });
         });
         return advisors;

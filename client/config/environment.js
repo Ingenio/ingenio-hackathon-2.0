@@ -6,6 +6,7 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    apiRoot: 'http://localhost:31337',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -35,6 +36,7 @@ module.exports = function(environment) {
 
   if (environment === 'development') {
     ENV.EmberENV.port = 31337;
+    ENV.EmberENV.apiRoot = 'http://localhost:' + ENV.EmberENV.port;
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;

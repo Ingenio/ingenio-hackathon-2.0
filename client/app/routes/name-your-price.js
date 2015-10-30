@@ -41,6 +41,6 @@ export default Ember.Route.extend({
           actualTotalPrice: 40
         }
       ]
-    }
+    };
   }
 });
