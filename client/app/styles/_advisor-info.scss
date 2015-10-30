@@ -9,7 +9,7 @@
       color: #333;
     }
 
-    
+
   }
   .advisor-image {
     width: 75px;
@@ -21,13 +21,21 @@
   .price-section {
     margin-top: 15px;
   }
-  .price {
+  .minutes {
     margin-top: 0;
     font-size: 26px;
+    font-weight: 700;
+  }
+  .price {
+    margin-top: 0;
+    padding-bottom: 20px;
+    font-size: 16px;
   }
   .striked-price {
     margin-top: 0;
+    font-size: 26px;
     text-decoration: line-through;
+    color: $brand-warning;
   }
   .advisor-long-desc {
     color: lighten(grey, 20%);

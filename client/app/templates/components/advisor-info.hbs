@@ -17,10 +17,11 @@
           </div>
           {{#if hasUserOffer}}
             <div class="col-xs-6 col-md-2 price-section">
-                <span class="inline-block"><span class="price">{{advisorInfo.minutesOffered}}</span>Mins</span>
+                <div class="inline-block"><span class="minutes">{{advisorInfo.minutesOffered}}</span> mins</div>
                 <span class="inline-block">
+                  <span class="striked-price">${{advisorInfo.actualTotalPrice}}</span>
                     <span class="price">${{offerPrice}}</span>
-                    <span class="striked-price">${{advisorInfo.actualTotalPrice}}</span>
+
                 </span>
             </div>
           {{else}}
