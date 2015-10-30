@@ -25,19 +25,24 @@
     close="toggleModal"
     target="#popupContainer"
     translucentOverlay=true
-    containerClassNames="alert-box success"
+    containerClassNames="alert-box default name-your-price-popup"
     clickOutsideToClose="true"
   }}
-      <h4>
-        Would you like to name your price?
-      </h4>
-
-      <div class="text-right">
-        <button class="btn btn-secondary" {{action "toggleModal"}}>Not now</button>
-        {{#link-to 'name-your-price' tagName='button' classNames='btn btn-primary'}}
-        Yes{{/link-to}}
+    <div>
+      <div class="popup-header">
+        <h2 class="faded">
+          Don't like <span class="emphasize">per-minute</span> charges?
+        </h2>
+        <h2 class="faded">Set your own price <span class="emphasize">per-call.</span></h2>
+      </div>
+      <div class="popup-body">
+        <div class="text-right">
+          <button class="btn btn-default" {{action "toggleModal"}}>Not now</button>
+          {{#link-to 'name-your-price' tagName='button' classNames='btn btn-success'}}
+          Set My Price {{/link-to}}
+        </div>
       </div>
 
-
+    </div>
   {{/modal-dialog}}
 {{/if}}

@@ -1,0 +1,29 @@
+@import "variables";
+
+.name-your-price-popup {
+  padding: 30px;
+
+  .popup-header {
+    margin-bottom: 30px;
+  }
+
+  .pupup-body {
+
+  }
+
+  .faded {
+    color: fade-out($text-color, 0.5);
+  }
+
+  .emphasize {
+    color: $text-color;
+  }
+
+  .green {
+    color: $brand-success;
+  }
+
+  .btn-default {
+    margin-right: 10px;
+  }
+}
