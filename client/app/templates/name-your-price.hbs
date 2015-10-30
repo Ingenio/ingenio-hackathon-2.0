@@ -1,5 +1,5 @@
 <div class="col-sm-12 ask-keen-content">
-  {{#if isOfferSubmitted}}
+  {{#if model.isOfferSubmitted}}
       <div class="panel panel-default consumer-question">
           <div class="panel-body">
               <h2>Your offer : $30</h2>
@@ -26,12 +26,12 @@
   {{/if}}
 
 
-  {{#if anyAdvisorResponsePresent}}
+  {{#if model.anyAdvisorResponsePresent}}
       <h3 class="secondary">Responses from our advisors:</h3>
       <br/>
       <ul class="media-list advisor-message-list">
-        {{#each response in responseFromAdvisors}}
-          {{advisor-info advisorInfo=response userId=userId offerPrice=userOfferPrice}}
+        {{#each response in model.responseFromAdvisors}}
+          {{advisor-info advisorInfo=response userId=model.userId offerPrice=model.userOfferPrice}}
             <br/>
         {{/each}}
       </ul>

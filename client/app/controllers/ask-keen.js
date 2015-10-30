@@ -5,7 +5,7 @@ var Advisor = Ember.Object.extend({
   answerMask: ''
 });
 
-export default Ember.ObjectController.extend({
+export default Ember.Controller.extend({
   userId: function() {
     var bound = {min: 100, max: 200};
 

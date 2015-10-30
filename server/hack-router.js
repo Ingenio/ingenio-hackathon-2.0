@@ -22,14 +22,13 @@ module.exports = function Router(socketIo) {
     });
 
     router.route('/advisors')
-    .get(function(req, res) {
-        createRandomAdvisors(10).then(function(advisors){
-            console.log(advisors);
-            res.send(advisors);    
-        })
-        
-    });
-    
+      .get(function(req, res) {
+          createRandomAdvisors(10).then(function(advisors){
+              console.log(advisors);
+              res.send(advisors);
+          })
+      });
+
 
     io.on('connection', function(socket) {
         log.info('client connected, total clients: ' + ++totalClients + chalk.grey(' connectionId: ' + socket.client.conn.id));
@@ -171,14 +170,13 @@ function createRandomAdvisors(count) {
                 pricePerMinute: (Math.floor((Math.random() * 5) + 1) + 0.99).toFixed(2)
             });
         });
-       console.log(advisors);
         return advisors;
-        
+
     };
     return request('http://api.randomuser.me/?results=' + count)
         .then(function(body) {
-            var userlist = JSON.parse(body).results;
-            return userlist;
+          var userlist = JSON.parse(body).results;
+          return userlist;
         })
         .then(createAdvisors);
 }

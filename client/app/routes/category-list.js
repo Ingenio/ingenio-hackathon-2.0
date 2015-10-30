@@ -7,8 +7,14 @@ var CategoryListModel = Ember.Object.extend({
 
 export default Ember.Route.extend({
 
+  categoryListModel: null,
+
   model: function() {
-    return CategoryListModel.create({
+    this.categoryListModel = CategoryListModel.create({
+      advisorList: []
+    });
+
+    this.categoryListModel =  CategoryListModel.create({
       //TODO: muthu - replace the mock advisors with a call to api
       advisorList: [
         {
@@ -103,13 +109,21 @@ export default Ember.Route.extend({
         }
       ]
     });
+
+    return this.categoryListModel;
   },
+
+  actions: {
+    toggleModal: function() {
+      this.toggleProperty('categoryListModel.showNameYourPriceDialog');
+    }
+  },
+
   setupController(controller, model){
     this._super(controller, model);
 
     Ember.run.later(this,function() {
-      model.set('showNameYourPriceDialog',true);
-      console.log(model.get('showNameYourPriceDialog'));
-    }, 5000);
+      model.set('showNameYourPriceDialog', true);
+    }, 1000);
   }
 });
