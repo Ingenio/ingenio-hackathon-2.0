@@ -1,13 +1,12 @@
 <div class="col-sm-12 ask-keen-content">
   {{#if model.isOfferSubmitted}}
-      <div class="panel panel-default consumer-question">
-          <div class="panel-body">
-              <h2>Your offer : $30</h2>
-          </div>
+      <div class="text-center">
+        <h1 class="margin-bottom">Make your offer:</h1>
+        {{select-one-of-3}}
       </div>
 
       <div class="text-center">
-          <h4 class="secondary"> <img src="/images/spinner.gif" class="spinner"/> &nbsp; Negotiating with our advisors.</h4><br/>
+          <h4 class="secondary"> <img src="/images/spinner.gif" class="spinner"/> &nbsp; Negotiating with our advisors (Real Time!)</h4><br/>
       </div>
 
   {{else}}

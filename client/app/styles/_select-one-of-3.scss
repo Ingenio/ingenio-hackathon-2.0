@@ -1,0 +1,43 @@
+@import "variables";
+.select-one-of-3 {
+  $base-width: 250px;
+  $base-height: 200px;
+  .option {
+    transition: all 0.5s ease;
+    width: $base-width;
+    height: $base-height;
+    font-size: 42px;
+    color: $brand-primary;
+    background-color: $body-bg;
+    padding-top: 50px;
+
+    &:hover {
+      background-color: darken($hover-bg-color, 5%);
+    }
+  }
+  .option.active {
+    font-size: 56px;
+    width: $base-width + 60px;
+    height: $base-height + 45px;
+    //background-color: $brand-success;
+  }
+  .option.option-best {
+    //background-color: rgb(255, 208, 29);
+    font-size: 56px;
+    //color: white;
+    width: $base-width + 60px;
+    height: $base-height + 65px;
+    //padding-top: 25px;
+    background-image: linear-gradient(180deg, rgb(230, 126, 34) 12%, rgb(241, 196, 15) 100%);
+    background-image: -moz-linear-gradient(top, rgb(230, 126, 34) 12%, rgb(241, 196, 15) 100%);
+    background-image: -webkit-linear-gradient(top, rgb(230, 126, 34) 12%, rgb(241, 196, 15) 100%);
+    background-image: -o-linear-gradient(top, rgb(230, 126, 34) 12%, rgb(241, 196, 15) 100%);
+    background-image: -ms-linear-gradient(top, rgb(230, 126, 34) 12%, rgb(241, 196, 15) 100%);
+  }
+
+  .explanation {
+    font-size: 14px;
+    color: grey;
+    font-style: italic;
+  }
+}

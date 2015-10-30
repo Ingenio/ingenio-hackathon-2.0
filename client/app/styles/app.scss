@@ -8,9 +8,10 @@ $hover-bg-color: #f7f7fa;
   /*margin-top: 10%;*/
 }
 
-.ask-keen-content {
-  margin-top: 10%;
+.margin-bottom {
+  margin-bottom: 30px;
 }
+
 
 .min-header-nav-bar {
   height: 66px;
@@ -191,3 +192,4 @@ html, body {
 
 @import "advisor-info";
 @import "name-your-price-popup";
+@import "select-one-of-3";

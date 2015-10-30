@@ -1,0 +1,24 @@
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-default option" {{action "optionSelected" 14.99 this}}>
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> $14.99
+    <p class="explanation">
+      You will talk for 5-10 minutes
+    </p>
+  </label>
+  <label class="btn btn-default option option-best active" {{action "optionSelected" 29.99 this}}>
+    <input type="radio" name="options" id="option2" autocomplete="off"> $29.99
+    <p>
+      Best Deal
+    </p>
+    <p class="explanation">
+      You will talk for 10-20 minutes
+    </p>
+  </label>
+  <label class="btn btn-default option" {{action "optionSelected" 44.99 this}}>
+    <input type="radio" name="options" id="option3" autocomplete="off"> $44.99
+    <p class="explanation">
+      You will talk for 20+ minutes
+    </p>
+  </label>
+</div>
+{{yield}}

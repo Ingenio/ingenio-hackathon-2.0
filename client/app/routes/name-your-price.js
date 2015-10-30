@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     return {
       isOfferSubmitted: true,
       anyAdvisorResponsePresent: true,
-      userOfferPrice: 30, //Offer price what user chooses
+      userOfferPrice: 29.99, //Offer price what user chooses
       responseFromAdvisors: [
         {
           advisorId: 52108343528,
@@ -16,7 +16,7 @@ export default Ember.Route.extend({
           starRating: 4,
           pricePerMinute: '1.99',
           minutesOffered: 20,
-          actualTotalPrice: 40
+          actualTotalPrice: 50
         },
         {
           advisorId: 52108343529,
