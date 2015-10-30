@@ -37,6 +37,6 @@ export default Ember.Route.extend({
 
     Ember.run.later(this, function() {
       model.set('showNameYourPriceDialog', true);
-    }, 1000);
+    }, 10000);
   }
 });

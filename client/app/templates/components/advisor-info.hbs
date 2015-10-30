@@ -19,15 +19,17 @@
             <div class="col-xs-6 col-md-2 price-section">
                 <div class="inline-block"><span class="minutes">{{advisorInfo.minutesOffered}}</span> mins</div>
                 <span class="inline-block">
-                  <span class="striked-price">${{advisorInfo.actualTotalPrice}}</span>
-                    <span class="price">${{offerPrice}}</span>
-
+                  <div>
+                    <span class="striked-price">${{advisorInfo.actualTotalPrice}}</span>
+                  </div>
+                  <span class="price">${{offerPrice}}</span>
+                  <!-- <sup class="striked-price">${{advisorInfo.actualTotalPrice}}</sup> -->
                 </span>
             </div>
           {{else}}
               <div class="col-xs-6 col-md-2 price-section">
               <span class="inline-block">
-                  <span class="price">${{advisorInfo.pricePerMinute}}/min</span>
+                  <span class="price-per-min"><span class="secondary">$</span>{{advisorInfo.pricePerMinute}}<span class="secondary">/min</span></span>
               </span>
               </div>
           {{/if}}

@@ -19,21 +19,33 @@
     text-transform: capitalize;
   }
   .price-section {
-    margin-top: 15px;
+    // margin-top: 15px;
   }
   .minutes {
     margin-top: 0;
-    font-size: 26px;
+    font-size: 36px;
     font-weight: 700;
   }
   .price {
     margin-top: 0;
     padding-bottom: 20px;
-    font-size: 16px;
+    font-size: 26px;
+  }
+
+  .price-per-min {
+    margin-right: 10px;
+    font-size: 26px;
+  }
+  .secondary {
+    font-size: 18px;
+  }
+  .sub-price {
+
   }
   .striked-price {
-    margin-top: 0;
+    // margin-left: 5px;
     font-size: 26px;
+
     text-decoration: line-through;
     color: $brand-warning;
   }

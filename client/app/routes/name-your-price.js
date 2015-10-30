@@ -62,6 +62,6 @@ export default Ember.Route.extend({
         });
       }, 4000);
 
-    }
+        }
   }
 });
