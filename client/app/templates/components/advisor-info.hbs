@@ -15,13 +15,21 @@
               {{advisorInfo.description}}
             </span>
           </div>
-          <div class="col-xs-6 col-md-2 price-section">
-              <span class="inline-block"><span class="price">{{advisorInfo.minutesOffered}}</span>Mins</span>
+          {{#if hasUserOffer}}
+            <div class="col-xs-6 col-md-2 price-section">
+                <span class="inline-block"><span class="price">{{advisorInfo.minutesOffered}}</span>Mins</span>
+                <span class="inline-block">
+                    <span class="price">${{offerPrice}}</span>
+                    <span class="striked-price">${{advisorInfo.actualTotalPrice}}</span>
+                </span>
+            </div>
+          {{else}}
+              <div class="col-xs-6 col-md-2 price-section">
               <span class="inline-block">
-                  <span class="price">${{offerPrice}}</span>
-                  <span class="striked-price">${{advisorInfo.actualTotalPrice}}</span>
+                  <span class="price">${{advisorInfo.pricePerMinute}}</span>
               </span>
-          </div>
+              </div>
+          {{/if}}
           <div class="col-xs-6 col-md-2 ">
               <a href="http://keen.com"><img src="/images/button-call-now.png"/></a>
               <br/><br/>
