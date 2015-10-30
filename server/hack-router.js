@@ -21,6 +21,16 @@ module.exports = function Router(socketIo) {
         res.send('hello hacking world ' + coolFace());
     });
 
+    router.route('/advisors')
+    .get(function(req, res) {
+        createRandomAdvisors(10).then(function(advisors){
+            console.log(advisors);
+            res.send(advisors);    
+        })
+        
+    });
+    
+
     io.on('connection', function(socket) {
         log.info('client connected, total clients: ' + ++totalClients + chalk.grey(' connectionId: ' + socket.client.conn.id));
 
@@ -125,6 +135,7 @@ var toJson = function(object) {
     }
 };
 
+//Gets a mocked data for 1 advisor
 function createRandomAdvisor(name) {
     var createAdvisor = function(user) {
         return {
@@ -142,6 +153,34 @@ function createRandomAdvisor(name) {
             return JSON.parse(body).results[0].user;
         })
         .then(createAdvisor);
+}
+
+//prepare random list of advisors for the provided count
+function createRandomAdvisors(count) {
+    var createAdvisors = function(users) {
+        var advisors = [];
+        _.map(users, function(record){
+            var user = record.user;
+            advisors.push({
+                advisorId: Math.floor((Math.random() * 100000000000) + 1),
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget commodo hippo. Phasellus tristique semper leo, et ultrices lorem ornare non. Etiam ornare sollicitudin vehicula. Fusce at ante elementum lorem auctor volutpa',
+                profileImageUrl: user.picture.large,
+                advisorName: (user.name.first + ' ' + user.name.last),
+                postedDate: moment().format('MMMM Do, h:mm:ss a'), //March 8th 2015
+                starRating: Math.floor((Math.random() * 5) + 1),
+                pricePerMinute: (Math.floor((Math.random() * 5) + 1) + 0.99).toFixed(2)
+            });
+        });
+       console.log(advisors);
+        return advisors;
+        
+    };
+    return request('http://api.randomuser.me/?results=' + count)
+        .then(function(body) {
+            var userlist = JSON.parse(body).results;
+            return userlist;
+        })
+        .then(createAdvisors);
 }
 
 
