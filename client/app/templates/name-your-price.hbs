@@ -1,40 +1,26 @@
 <div class="col-sm-12 ask-keen-content">
-  {{#if model.isOfferSubmitted}}
+  {{#unless model.isOfferSubmitted}}
       <div class="text-center">
         <h1 class="margin-bottom">Make your offer:</h1>
-        {{select-one-of-3}}
-      </div>
-
-      <div class="text-center">
-          <h4 class="secondary"> <img src="/images/spinner.gif" class="spinner"/> &nbsp; Negotiating with our advisors (Real Time!)</h4><br/>
+        {{select-one-of-3 offerSelected='onOfferSelected'}}
       </div>
 
   {{else}}
-      <h2>Name your price to <span class="hundreds-advisors">hundreds</span> of Advisors!</h2>
-
-      <div class="input-group input-group-lg">
-        {{input-with-on-change class="form-control" type="text" maxlength="140" value=questionAsked
-        placeholder="Type in your question..." onInputChange="onInputChange" startedTyping="startedTyping"}}
-          <span class="input-group-btn">
-              <button {{bind-attr class=":btn :btn-success consumerStartedTyping:enabled:disabled"}}
-                      type="submit" {{action 'submitQuestion'}}>Ask
-              </button>
-            </span>
+      <div class="text-center">
+          <h1 class="margin-bottom">Offer you chose: ${{userOfferPrice}}</h1>
+          <h4 class="secondary"> <img src="/images/spinner.gif" class="spinner"/> &nbsp; Negotiating with our advisors (Real Time!)</h4><br/>
       </div>
-
-  {{/if}}
-
-
-  {{#if model.anyAdvisorResponsePresent}}
-      <h3 class="secondary">Responses from our advisors:</h3>
-      <br/>
-      <ul class="media-list advisor-message-list">
-        {{#each response in model.responseFromAdvisors}}
-          {{advisor-info advisorInfo=response userId=model.userId offerPrice=model.userOfferPrice}}
-            <br/>
-        {{/each}}
-      </ul>
-  {{/if}}
+    {{#if model.anyAdvisorResponsePresent}}
+        <h3 class="secondary">Responses from our advisors:</h3>
+        <br/>
+        <ul class="media-list advisor-message-list">
+          {{#each response in model.responseFromAdvisors}}
+            {{advisor-info advisorInfo=response userId=model.userId offerPrice=model.userOfferPrice}}
+              <br/>
+          {{/each}}
+        </ul>
+    {{/if}}
+  {{/unless}}
 </div>
 
 

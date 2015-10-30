@@ -9,7 +9,7 @@ export default Ember.Component.extend({
       //console.info(this.$(option));
       // this.$('.option').addClass('disabled');
       // this.$('.option.active').removeClass('disabled');
-
+      this.sendAction('offerSelected', price);
 
     }
   }
