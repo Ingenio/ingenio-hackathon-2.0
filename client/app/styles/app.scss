@@ -44,9 +44,6 @@ $green: #18BC9C;
   font-family: monospace;
 }
 
-.user-message {
-
-}
 
 .see-that-you-are-typing {
   font-size: 12px;
@@ -67,9 +64,6 @@ $green: #18BC9C;
   color: #FFF;
 }
 
-.advisor-name {
-  text-transform: capitalize;
-}
 
 .consumer-question {
   border-radius: 20px;
@@ -194,15 +188,7 @@ html, body {
   height: 100px;
 }
 
-.price-section{
-  margin-top: 15px;
-}
 
-.price{
-  margin-top: 0px;
-  font-size: 26px;
-}
-.striked-price{
-  margin-top: 0px;
-  text-decoration: line-through;
-}
+
+
+@import "advisor-info"

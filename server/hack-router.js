@@ -157,7 +157,10 @@ function createRandomAdvisor(name) {
 function createRandomAdvisors(count) {
     var createAdvisors = function(users) {
         var advisors = [];
-        _.map(users, function(record){
+        _.map(users, function(record) {
+            var currentYear = new Date().getFullYear();
+            var rndYear = Math.floor((Math.random() * (currentYear - 2001)) + 1998);
+            var yearsToNow = new Date().getFullYear() - rndYear;
             var user = record.user;
             advisors.push({
               id: Math.floor((Math.random() * 100000000000) + 1).toString(),
@@ -165,6 +168,7 @@ function createRandomAdvisors(count) {
               profileImageUrl: user.picture.large,
               advisorName: (user.name.first + ' ' + user.name.last),
               postedDate: moment().format('MMMM Do, h:mm:ss a'), //March 8th 2015
+              memberSince: 'Member since ' + rndYear + ' ('+ yearsToNow + ' years)',
               starRating: Math.floor((Math.random() * 5) + 1),
               pricePerMinute: (Math.floor((Math.random() * 5) + 1) + 0.99).toFixed(2)
             });

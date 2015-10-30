@@ -9,9 +9,9 @@
           <div class="col-xs-6 col-md-8">
             <h4 class="media-heading">
                 <span class="advisor-name">{{advisorInfo.advisorName}}</span>
-                <small><i>Posted on {{advisorInfo.postedDate}} (8 seconds ago)</i></small>
+                <small><i>{{advisorInfo.memberSince}} </i></small>
             </h4>
-            <span class="user-message inline-block">
+            <span class="advisor-long-desc inline-block">
               {{advisorInfo.description}}
             </span>
           </div>
@@ -26,7 +26,7 @@
           {{else}}
               <div class="col-xs-6 col-md-2 price-section">
               <span class="inline-block">
-                  <span class="price">${{advisorInfo.pricePerMinute}}</span>
+                  <span class="price">${{advisorInfo.pricePerMinute}}/min</span>
               </span>
               </div>
           {{/if}}
